@@ -9,7 +9,7 @@ final class EnumAssertTest extends \PHPUnit\Framework\TestCase
 
     public function testComparingTwoSimilarEnumValuesWork(): void
     {
-        EnumAssert::assertSameEnumValues(CardColor::get(CardColor::RED), CardColor::get(CardColor::RED));
+        EnumAssert::assertSame(CardColor::get(CardColor::RED), CardColor::get(CardColor::RED));
     }
 
     public function testAssertSameEnumFailsIfActualValueIsNotAnEnum(): void
@@ -17,7 +17,7 @@ final class EnumAssertTest extends \PHPUnit\Framework\TestCase
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
         $this->expectExceptionMessage('Failed asserting that \'foobar\' is an instance of class "Consistence\Enum\Enum".');
 
-        EnumAssert::assertSameEnumValues(CardColor::get(CardColor::RED), 'foobar');
+        EnumAssert::assertSame(CardColor::get(CardColor::RED), 'foobar');
     }
 
     public function testAssertSameEnumFailsIfExpectedValueIsNotAnEnum(): void
@@ -25,7 +25,7 @@ final class EnumAssertTest extends \PHPUnit\Framework\TestCase
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
         $this->expectExceptionMessage('Failed asserting that \'foobar2\' is an instance of class "Consistence\Enum\Enum".');
 
-        EnumAssert::assertSameEnumValues('foobar2', CardColor::get(CardColor::BLACK));
+        EnumAssert::assertSame('foobar2', CardColor::get(CardColor::BLACK));
     }
 
     public function testAssertSameEnumFailsIfTheEnumsAreNotSame(): void
@@ -33,7 +33,7 @@ final class EnumAssertTest extends \PHPUnit\Framework\TestCase
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
         $this->expectExceptionMessage('Expected "Mhujer\ConsistencePhpunit\Fixtures\CardColor:red", but got "Mhujer\ConsistencePhpunit\Fixtures\CardColor:black"');
 
-        EnumAssert::assertSameEnumValues(CardColor::get(CardColor::RED), CardColor::get(CardColor::BLACK));
+        EnumAssert::assertSame(CardColor::get(CardColor::RED), CardColor::get(CardColor::BLACK));
     }
 
 }

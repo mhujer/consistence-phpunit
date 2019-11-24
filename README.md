@@ -17,14 +17,14 @@ $ composer require mhujer/consistence-phpunit
 
 2. use the assert this way:
 ```php
-EnumAssert::assertSameEnumValues($expectedEnum, $actualEnum);
+EnumAssert::assertSame($expectedEnum, $actualEnum);
 ```
 
 e.g.
 ```php
 public function testEnumsAreSame(): void
 {
-    EnumAssert::assertSameEnumValues(CardColor::get(CardColor::RED), CardColor::get(CardColor::BLACK));
+    EnumAssert::assertSame(CardColor::get(CardColor::RED), CardColor::get(CardColor::BLACK));
 
     // Expected "Mhujer\ConsistencePhpunit\Fixtures\CardColor:red", but got "Mhujer\ConsistencePhpunit\Fixtures\CardColor:black
 }
