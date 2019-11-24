@@ -1,0 +1,58 @@
+{
+	"name": "mhujer/consistence-phpunit",
+	"description": "Add PHPUnit assert for Enums from consistence/consistence",
+	"type": "library",
+	"keywords": [
+		"enum",
+		"enums",
+		"consistence",
+		"phpunit",
+		"assert"
+	],
+	"license": "MIT",
+	"homepage": "https://github.com/mhujer/consistence-phpunit",
+	"authors": [
+		{
+			"name": "Martin Hujer",
+			"email": "mail@martinhujer.cz",
+			"homepage": "https://www.martinhujer.cz"
+		}
+	],
+	"require": {
+		"php": "~7.3",
+		"consistence/consistence": "~2.0",
+		"phpunit/phpunit": "^8.4"
+	},
+	"require-dev": {
+		"consistence/coding-standard": "3.9",
+		"php-coveralls/php-coveralls": "2.2.0",
+		"phpstan/extension-installer": "1.0.3",
+		"phpstan/phpstan-phpunit": "0.11.2",
+		"phpstan/phpstan-shim": "0.11.19"
+	},
+	"autoload": {
+		"psr-4": {
+			"Mhujer\\ConsistencePhpunit\\": "src/"
+		}
+	},
+	"autoload-dev": {
+		"psr-4": {
+			"Mhujer\\ConsistencePhpunit\\": "tests/"
+		}
+	},
+	"config": {
+		"sort-packages": true
+	},
+	"scripts": {
+		"build": [
+			"@composer validate --strict",
+			"@cs",
+			"@phpstan",
+			"@test"
+		],
+		"cs": "phpcs src tests",
+		"cbf": "phpcbf src tests",
+		"phpstan": "phpstan analyse src tests -c phpstan.neon --level=7 --no-progress",
+		"test": "phpunit"
+	}
+}

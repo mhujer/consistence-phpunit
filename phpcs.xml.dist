@@ -1,0 +1,21 @@
+<?xml version="1.0"?>
+<ruleset name="SymfonyProject">
+	<exclude-pattern>vendor/</exclude-pattern>
+	<rule ref="vendor/consistence/coding-standard/Consistence/ruleset.xml">
+		<exclude name="Generic.WhiteSpace.DisallowSpaceIndent.SpacesUsed"/>
+
+		<!-- handled by SlevomatCodingStandard.TypeHints.TypeHintDeclaration -->
+		<exclude name="Squiz.Commenting.FunctionComment.MissingParamTag"/>
+		<exclude name="Squiz.Commenting.FunctionComment.ParamNameNoMatch"/>
+	</rule>
+	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
+		<properties>
+			<property name="newlinesCountBetweenOpenTagAndDeclare" value="0"/>
+		</properties>
+	</rule>
+	<rule ref="SlevomatCodingStandard.TypeHints.TypeHintDeclaration">
+		<properties>
+			<property name="enableEachParameterAndReturnInspection" value="true"/>
+		</properties>
+	</rule>
+</ruleset>

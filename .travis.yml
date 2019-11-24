@@ -1,0 +1,18 @@
+language: php
+
+php:
+  - 7.3
+
+env:
+  matrix:
+    - PREFER_LOWEST="--prefer-lowest --prefer-stable"
+    - PREFER_LOWEST=""
+
+before_script:
+  - composer update $PREFER_LOWEST
+
+script:
+  - composer run build
+
+after_success:
+  - travis_retry php vendor/bin/php-coveralls -v
