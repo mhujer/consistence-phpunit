@@ -8,7 +8,7 @@ This library provides `EnumAssert` PHPUnit assert for [consistence/consistence](
 # Installation
 
 ```console
-$ composer require mhujer/consistence-phpunit
+$ composer require --dev mhujer/consistence-phpunit
 ```
 
 # Usage
