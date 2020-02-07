@@ -44,5 +44,8 @@ Bugs and feature request are tracked on [GitHub](https://github.com/mhujer/consi
 
 # Changelog
 
+## 1.1.0 (2020-02-07)
+- allow PHPUnit 9
+
 ## 1.0.0 (2019-11-24)
 - initial release
