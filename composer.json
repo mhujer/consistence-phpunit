@@ -24,11 +24,11 @@
 		"phpunit/phpunit": "^8.4"
 	},
 	"require-dev": {
-		"consistence/coding-standard": "3.9",
+		"consistence/coding-standard": "3.10",
 		"php-coveralls/php-coveralls": "2.2.0",
 		"phpstan/extension-installer": "1.0.3",
-		"phpstan/phpstan-phpunit": "0.11.2",
-		"phpstan/phpstan-shim": "0.11.19"
+		"phpstan/phpstan-phpunit": "0.12.6",
+		"phpstan/phpstan": "0.12.9"
 	},
 	"autoload": {
 		"psr-4": {
@@ -52,7 +52,7 @@
 		],
 		"cs": "phpcs src tests",
 		"cbf": "phpcbf src tests",
-		"phpstan": "phpstan analyse src tests -c phpstan.neon --level=7 --no-progress",
+		"phpstan": "phpstan analyse src tests -c phpstan.neon --level=8 --no-progress",
 		"test": "phpunit"
 	}
 }
