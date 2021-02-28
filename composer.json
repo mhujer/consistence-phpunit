@@ -20,15 +20,14 @@
 	],
 	"require": {
 		"php": "~7.4 | ~8.0",
-		"consistence/consistence": "~2.0",
+		"consistence-community/consistence": "~2.1",
 		"phpunit/phpunit": "^8.5|^9.0"
 	},
 	"require-dev": {
-		"consistence/coding-standard": "3.10",
-		"php-coveralls/php-coveralls": "2.2.0",
-		"phpstan/extension-installer": "1.0.3",
-		"phpstan/phpstan-phpunit": "0.12.6",
-		"phpstan/phpstan": "0.12.9"
+		"consistence-community/coding-standard": "3.11.0",
+		"phpstan/extension-installer": "1.1.0",
+		"phpstan/phpstan-phpunit": "0.12.17",
+		"phpstan/phpstan": "0.12.79"
 	},
 	"autoload": {
 		"psr-4": {
