@@ -31,7 +31,7 @@ public function testEnumsAreSame(): void
 ```
 
 # Requirements
-Works with PHP 7.4 or higher and PHPUnit 8.4 or higher.
+Works with PHP 7.4 or higher and PHPUnit 9.3 or higher.
 
 
 # Submitting bugs and feature requests
@@ -43,6 +43,11 @@ Bugs and feature request are tracked on [GitHub](https://github.com/mhujer/consi
 
 
 # Changelog
+
+# 1.2.0 (2021-02-28)
+- require PHP 7.4+
+- allow PHP 8.0
+- require PHPUnit 9.3+
 
 ## 1.1.0 (2020-02-07)
 - allow PHPUnit 9

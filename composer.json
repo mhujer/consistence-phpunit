@@ -21,7 +21,7 @@
 	"require": {
 		"php": "~7.4 | ~8.0",
 		"consistence-community/consistence": "~2.1",
-		"phpunit/phpunit": "^8.5|^9.0"
+		"phpunit/phpunit": "^9.3"
 	},
 	"require-dev": {
 		"consistence-community/coding-standard": "3.11.0",
