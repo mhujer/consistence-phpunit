@@ -12,7 +12,7 @@ final class EnumAssert
      * @param \Consistence\Enum\Enum|mixed $expectedEnum
      * @param \Consistence\Enum\Enum|mixed $actualEnum
      */
-    public static function assertSame($expectedEnum, $actualEnum): void
+    public static function assertSame($expectedEnum, $actualEnum): void // phpcs:ignore SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
     {
         Assert::assertInstanceOf(Enum::class, $expectedEnum);
         Assert::assertInstanceOf(Enum::class, $actualEnum);

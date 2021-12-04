@@ -10,7 +10,8 @@
 	</rule>
 	<rule ref="SlevomatCodingStandard.TypeHints.DeclareStrictTypes">
 		<properties>
-			<property name="newlinesCountBetweenOpenTagAndDeclare" value="0"/>
+			<property name="declareOnFirstLine" value="true"/>
+			<property name="spacesCountAroundEqualsSign" value="1"/>
 		</properties>
 	</rule>
 </ruleset>
