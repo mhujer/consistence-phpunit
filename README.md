@@ -44,6 +44,10 @@ Bugs and feature request are tracked on [GitHub](https://github.com/mhujer/consi
 
 # Changelog
 
+# 2.0.0 (2022-09-20)
+- require PHP 8.1+
+- add support for native enums to make migration easier
+
 # 1.2.0 (2021-02-28)
 - require PHP 7.4+
 - allow PHP 8.0
