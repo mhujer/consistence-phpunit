@@ -9,21 +9,34 @@ final class EnumAssert
 {
 
     /**
-     * @param \Consistence\Enum\Enum|mixed $expectedEnum
-     * @param \Consistence\Enum\Enum|mixed $actualEnum
+     * @param \Consistence\Enum\Enum|\BackedEnum|mixed $expectedEnum
+     * @param \Consistence\Enum\Enum|\BackedEnum|mixed $actualEnum
      */
     public static function assertSame($expectedEnum, $actualEnum): void // phpcs:ignore SlevomatCodingStandard.TypeHints.ParameterTypeHint.MissingNativeTypeHint
     {
-        Assert::assertInstanceOf(Enum::class, $expectedEnum);
-        Assert::assertInstanceOf(Enum::class, $actualEnum);
+        if ($expectedEnum instanceof Enum || $actualEnum instanceof Enum) {
+            Assert::assertInstanceOf(Enum::class, $expectedEnum);
+            Assert::assertInstanceOf(Enum::class, $actualEnum);
 
-        Assert::assertSame($expectedEnum, $actualEnum, sprintf(
-            'Expected "%s:%s", but got "%s:%s"',
-            get_class($expectedEnum),
-            $expectedEnum->getValue(),
-            get_class($actualEnum),
-            $actualEnum->getValue()
-        ));
+            Assert::assertSame($expectedEnum, $actualEnum, sprintf(
+                'Expected "%s:%s", but got "%s:%s"',
+                get_class($expectedEnum),
+                $expectedEnum->getValue(),
+                get_class($actualEnum),
+                $actualEnum->getValue()
+            ));
+        } else {
+            Assert::assertInstanceOf(\BackedEnum::class, $expectedEnum);
+            Assert::assertInstanceOf(\BackedEnum::class, $actualEnum);
+
+            Assert::assertSame($expectedEnum, $actualEnum, sprintf(
+                'Expected "%s:%s", but got "%s:%s"',
+                get_class($expectedEnum),
+                $expectedEnum->value,
+                get_class($actualEnum),
+                $actualEnum->value
+            ));
+        }
     }
 
 }
