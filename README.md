@@ -31,7 +31,7 @@ public function testEnumsAreSame(): void
 ```
 
 # Requirements
-Works with PHP 7.4 or higher and PHPUnit 9.3 or higher.
+Works with PHP 8.1 or higher and PHPUnit 9.3 or higher.
 
 
 # Submitting bugs and feature requests
