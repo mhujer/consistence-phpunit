@@ -15,7 +15,7 @@ final class EnumAssertTest extends \PHPUnit\Framework\TestCase
     public function testAssertSameEnumFailsIfActualValueIsNotAnEnum(): void
     {
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
-        $this->expectExceptionMessage('Failed asserting that \'foobar\' is an instance of class "Consistence\Enum\Enum".');
+        $this->expectExceptionMessage('Failed asserting that \'foobar\' is an instance of class Consistence\Enum\Enum.');
 
         EnumAssert::assertSame(CardColor::get(CardColor::RED), 'foobar');
     }
@@ -23,7 +23,7 @@ final class EnumAssertTest extends \PHPUnit\Framework\TestCase
     public function testAssertSameEnumFailsIfExpectedValueIsNotAnEnum(): void
     {
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
-        $this->expectExceptionMessage('Failed asserting that \'foobar2\' is an instance of class "Consistence\Enum\Enum".');
+        $this->expectExceptionMessage('Failed asserting that \'foobar2\' is an instance of class Consistence\Enum\Enum.');
 
         EnumAssert::assertSame('foobar2', CardColor::get(CardColor::BLACK));
     }

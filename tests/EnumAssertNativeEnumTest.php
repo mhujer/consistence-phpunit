@@ -16,7 +16,7 @@ final class EnumAssertNativeEnumTest extends \PHPUnit\Framework\TestCase
     public function testAssertSameEnumFailsIfActualValueIsNotAnEnum(): void
     {
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
-        $this->expectExceptionMessage('Failed asserting that \'foobar\' is an instance of interface "BackedEnum".');
+        $this->expectExceptionMessage('Failed asserting that \'foobar\' is an instance of interface BackedEnum.');
 
         EnumAssert::assertSame(CardColorNative::RED, 'foobar');
     }
@@ -24,7 +24,7 @@ final class EnumAssertNativeEnumTest extends \PHPUnit\Framework\TestCase
     public function testAssertSameEnumFailsIfExpectedValueIsNotAnEnum(): void
     {
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
-        $this->expectExceptionMessage('Failed asserting that \'foobar2\' is an instance of interface "BackedEnum".');
+        $this->expectExceptionMessage('Failed asserting that \'foobar2\' is an instance of interface BackedEnum.');
 
         EnumAssert::assertSame('foobar2', CardColorNative::BLACK);
     }
@@ -38,10 +38,10 @@ final class EnumAssertNativeEnumTest extends \PHPUnit\Framework\TestCase
     }
 
 
-    public function testComparingNativeEnumWithConsisteneEnum(): void
+    public function testComparingNativeEnumWithConsistenceEnum(): void
     {
         $this->expectException(\PHPUnit\Framework\ExpectationFailedException::class);
-        $this->expectExceptionMessage('Failed asserting that Mhujer\ConsistencePhpunit\Fixtures\CardColorNative Object (...) is an instance of class "Consistence\Enum\Enum".');
+        $this->expectExceptionMessage('Failed asserting that Mhujer\ConsistencePhpunit\Fixtures\CardColorNative Enum (RED, \'red\') is an instance of class Consistence\Enum\Enum.');
 
         EnumAssert::assertSame(CardColorNative::RED, CardColor::get(CardColor::BLACK));
     }
